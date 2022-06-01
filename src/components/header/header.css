@@ -1,0 +1,57 @@
+.header{
+    position: relative;
+}
+.header-search {
+    background-color: white;
+    border: 6px solid #DDB892;
+    /* padding: 10px 0px; */
+    border-radius: 5px;
+    position: absolute;
+    bottom: -25px;
+    width: 90%;
+    max-width: 1150px;
+}
+  .header-search--item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0px;
+  }
+  
+  .header-search--input {
+    border: none;
+    outline: none;
+    color: lightgray ;
+    cursor: pointer;
+  }
+  .header-search--input::placeholder{
+    color: lightgray;
+  }
+  
+  .header-search--text {
+    color: rgb(237, 232, 232);
+    cursor: pointer;
+  }
+  
+  .date {
+    position: absolute;
+    top: 50px;
+    z-index: 2;
+  }
+  
+  .options {
+    z-index: 2;
+    position: absolute;
+    top: 50px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  }  
+.optionCounterNumber{
+      font-size: 12px;
+      color: black;
+      margin: 0 50px;
+  }
+  .optionCounterButton:disabled {
+    cursor: not-allowed;
+  }

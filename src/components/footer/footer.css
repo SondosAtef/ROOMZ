@@ -1,0 +1,9 @@
+.footer-list {
+	list-style: none;
+}
+
+.fListItem {
+	margin-bottom: 10px;
+	color: #785740;
+	cursor: pointer;
+}
