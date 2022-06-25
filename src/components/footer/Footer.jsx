@@ -4,7 +4,7 @@ import {Stack , Box , Container} from "@mui/material"
 const Footer = () => {
   return (
     <Container>
-    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={4} justifyContent="space-between" width="100%">
+    <Stack direction={{ xs: 'column', md: 'row' }} spacing={4} justifyContent="space-between">
       <Box>
         <ul className="footer-list">
           <li className="fListItem">Countries</li>

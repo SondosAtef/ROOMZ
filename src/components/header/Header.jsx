@@ -1,7 +1,9 @@
 import "./header.css";
 import { useState } from "react";
-import {  Stack ,Box, Container, Typography, Button, Grid } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import {Link} from "react-router-dom"
 
+import {  Stack ,Box, Container, Typography, Button} from "@mui/material";
 import HotelIcon from "@mui/icons-material/Hotel";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import ManIcon from "@mui/icons-material/Man";
@@ -23,6 +25,11 @@ const Header = () => {
 
 	const [ShowRoommateCounter, setShowRoommateCounter] = useState(false);
 	const [roommateCounter, setRoommateCounter] = useState(0);
+	const [destination , setDestination] = useState("")
+const navigate = useNavigate()
+const handleSearch =()=>{
+navigate("./hotels" , {state :{destination, date, roommateCounter }})
+}
 
 	return (
 		<Box sx={{ background: "#b08968" }} pt={1} className="header">
@@ -45,16 +52,12 @@ const Header = () => {
 						"&:hover": { backgroundColor: "#7f5539" },
 					}}
 				>
-					Login / Register
+					<Link to="/login">
+						Login / Register
+					</Link>
 				</Button>
 {/* Search Bar */}
-				{/* <Grid
-					container
-					spacing={1}
-					justifyContent="space-around"
-					alignItems="center"
-					className="header-search"
-				> */}
+
 				<Stack direction={{ xs: 'column', md: 'row' }} className="header-search" justifyContent="space-around"
 					alignItems="center">
 					<Box  className="header-search--item">
@@ -63,6 +66,7 @@ const Header = () => {
 							type="text"
 							placeholder="Where you are searching ?"
 							className="header-search--input"
+							onChange={e=>setDestination(e.target.value)}
 						/>
 					</Box>
 					<Box className="header-search--item">
@@ -128,6 +132,7 @@ const Header = () => {
 								color: "#ede0d4",
 								"&:hover": { backgroundColor: "#7f5539" },
 							}}
+							onClick={handleSearch}
 						>
 							Search
 						</Button>
