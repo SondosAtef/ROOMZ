@@ -1,6 +1,6 @@
 import "./list.css";
 
-import { Container, Box, Stack, Typography } from "@mui/material";
+import { Container, Box, Stack, Typography , Button} from "@mui/material";
 
 import Navbar from "../../components/navbar/Navbar";
 import SearchItem from "../../components/searchItem/SearchItem";
@@ -26,14 +26,15 @@ const List = () => {
 						<Typography color="#785740" variant="h6">
 							Search
 						</Typography>
-            <Stack className="lsItem" >
-              <label>Destination</label>
-              <input placeholder={destination} type="text" />
-              
+            <Stack  direction="column" >
+            <Typography color="#785740" variant="body1">
+                Destination</Typography>
+              <input  type="text" placeholder={destination} />
             </Stack>
-            <Stack className="lsItem">
-              <label>Check-in Date</label>
-              <span onClick={() => setOpenDate(!openDate)}>{`${format(
+            <Stack  direction="column" spacing={1} mt={1} >
+            <Typography color="#785740" variant="body1">
+                Check-in Date</Typography>
+              <span className="selected-date" onClick={() => setOpenDate(!openDate)}>{`${format(
                 date[0].startDate,
                 "MM/dd/yyyy"
               )} to ${format(date[0].endDate, "MM/dd/yyyy")}`}</span>
@@ -44,22 +45,25 @@ const List = () => {
                 />
                 }
             </Stack>
-            <Stack className="lsItem">
-              <label>Options</label>
+            <Stack  direction="column" spacing={1}  mt={1}>
+            <Typography color="#785740" variant="body1">
+                Options</Typography>
               <div className="lsOptionItem">
-                  <span className="lsOptionText">
-                    Min price <small>per night</small>
-                  </span>
+              <Typography color="#785740" variant="body1" mt={1}>
+                    Min Price <small>per night</small>
+                  </Typography >
                   <input type="number" className="lsOptionInput" />
               </div>
               <div className="lsOptionItem">
-                  <span className="lsOptionText">
+              <Typography color="#785740" variant="body1" mt={1}>
                     Max price <small>per night</small>
-                  </span>
+                  </Typography>
                   <input type="number" className="lsOptionInput" />
               </div>
               <div className="lsOptionItem">
-                  <span className="lsOptionText">Roommates Number</span>
+              <Typography color="#785740" variant="body1" mt={1}>
+                    Roommates Number
+                    </Typography>
                   <input
                     type="number"
                     min={1}
@@ -68,10 +72,16 @@ const List = () => {
                   />
                 </div>
             </Stack>
-            <button>Search</button>
+            <Button variant="contained" sx={{
+              width: "100%",
+              marginTop : "15px",
+              background:"#9c6644" , color:"#ede0d4", "&:hover":{backgroundColor :"#7f5539"} }}>
+              Search</Button>
 					</Box>
 					<Box className="listResult" flex="3">
-						<p>Result</p>
+          <Typography color="#785740" variant="h4">
+            Result
+          </Typography>
             <SearchItem />
             <SearchItem />
             <SearchItem />

@@ -2,12 +2,14 @@ import "./hotel.css"
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import CloseIcon from '@mui/icons-material/Close';
+import { Container, TextField, Box, Stack, Typography , Button } from "@mui/material";
 
 import {useState} from "react"
 
 import Navbar from "../../components/navbar/Navbar";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
+
 const Hotel = () => {
 
   const [slideNumber, setSlideNumber] = useState(0);
@@ -53,9 +55,10 @@ const Hotel = () => {
   ];
   
 	return (
-		<div>
+		<Box sx={{ backgroundColor: "#EDE0D4" }}>
 			<Navbar />
-			<div className="hotelContainer">
+      <Container >
+			<Stack mt={2}>
 
       {open && (
           <div className="slider">
@@ -78,18 +81,19 @@ const Hotel = () => {
         )}
 
 
-				<div className="hotelWrapper">
-					<h1 className="hotelTitle">Tower Street Apartments</h1>
-					<div className="hotelAddress">
-						{/* <FontAwesomeIcon icon={faLocationDot} /> */}
-						<span>Elton St 125 New york</span>
-					</div>
-					<span className="hotelDistance">
+				<Stack className="hotelWrapper" spacing={2}>
+        <Typography  color="#785740" variant="h4" sx={{ fontWeight: 'bold' }}>
+            Tower Street Apartments
+          </Typography>  
+					<Typography color="#785740" variant="body2">
+						Elton St 125 New york
+					</Typography>
+					<Typography variant="body1" color="#ca6702" sx={{ fontWeight: 'bold' }}>
 						Excellent location – 500m from center
-					</span>
-					<span className="hotelPriceHighlight">
-						Book a stay over $114 at this property and get a free airport taxi
-					</span>
+            </Typography>
+            <Typography variant="body1" color="#ca6702" >
+						Book a stay over $114 at this property and get a free WIFI
+            </Typography>
           <div className="hotelImages">
             {photos.map((photo, index) => (
               <div className="hotelImgWrapper" key={index}>
@@ -103,10 +107,11 @@ const Hotel = () => {
             ))}
           </div>{/* hotel Images */}
 
-          <div className="hotelDetails">
-          <div className="hotelDetailsTexts">
-              <h1 className="hotelTitle">Stay in the heart of City</h1>
-              <p className="hotelDesc">
+          <Stack direction="row" justifyContent="space-between"  spacing={2}>
+          <Box flex="3">
+          <Typography  color="#785740" variant="h4" sx={{ fontWeight: 'bold' }}>
+                Stay in the heart of City</Typography>
+                <Typography variant="body2" color="#785740" mt={2}>
                 Located a 5-minute walk from St. Florian's Gate in Krakow, Tower
                 Street Apartments has accommodations with air conditioning and
                 free WiFi. The units come with hardwood floors and feature a
@@ -118,34 +123,40 @@ const Hotel = () => {
                 airport is John Paul II International Kraków–Balice, 16.1 km
                 from Tower Street Apartments, and the property offers a paid
                 airport shuttle service.
-              </p>
-            </div>{/* hotelDetailsTexts */}
+              </Typography>
+            </Box>{/* hotelDetailsTexts */}
 
-            <div className="hotelDetailsPrice">
-              <h1>Perfect for a 9-night stay!</h1>
-              <span>
+            <Stack flex="1" spacing={2} sx={{backgroundColor : "#fff" , padding: "20px" ,  borderRadius : "10px"}} >
+            <Typography variant="h6" color="#785740" sx={{ fontWeight: 'bold' }}>
+                Perfect for a 9-night stay! </Typography>
+                <Typography variant="body1" color="#785740">
                 Located in the real heart of Krakow, this property has an
                 excellent location score of 9.8!
-              </span>
-              <h2>
+              </Typography>
+              <Typography variant="h5" color="#ca6702" sx={{ fontWeight: 'bold' }}>
                 <b>$945</b> (9 nights)
-              </h2>
-              <button>Reserve or Book Now!</button>
-            </div>{/* hotelDetailsPrice */}
+              </Typography>
+              <Button variant="contained" sx={{
+              width: "100%",
+              marginTop : "15px",
+              background:"#9c6644" , color:"#ede0d4", "&:hover":{backgroundColor :"#7f5539"} }}>
+                Reserve or Book Now!</Button>
+            </Stack>{/* hotelDetailsPrice */}
 
 
-          </div> {/* hotelDetails */}
+          </Stack> {/* hotelDetails */}
             
 
 
 
-				</div>{/* hotelWrapper */}
-          <MailList />
-          <Footer />
+				</Stack>{/* hotelWrapper */}
         
-			</div>{/* hotelContainer */}
-      
-		</div>// first div
+			</Stack>{/* hotelContainer */}
+      </Container >
+      <MailList />
+          
+          <Footer />
+		</Box>
     
 	);
 };
