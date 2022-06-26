@@ -8,7 +8,7 @@ import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
 
 
-import { Container , Box , Stack , Typography } from "@mui/material";
+import { Box , Stack , Typography } from "@mui/material";
 
 const Home = () => {
 	return (
@@ -20,8 +20,8 @@ const Home = () => {
 				<Typography  color="#785740" variant="h4" mt={3}>Most Rented Rooms</Typography>
 				<MostRented />
 				<MailList />
-				<Footer />
 			</Stack>
+				<Footer />
 		</Box>
 	);
 };

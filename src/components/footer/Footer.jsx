@@ -3,7 +3,8 @@ import {Stack , Box , Container} from "@mui/material"
 
 const Footer = () => {
   return (
-    <Container>
+    <Box sx={{ backgroundColor: "#EDE0D4" , borderTop : "1px solid lightgray" }} pt={2}>
+    <Container >
     <Stack direction={{ xs: 'column', md: 'row' }} spacing={4} justifyContent="space-between">
       <Box>
         <ul className="footer-list">
@@ -50,6 +51,7 @@ const Footer = () => {
     </Stack>
       <Box textAlign="center">Copyright © 2022 ROOMZ.</Box>
       </Container>
+      </Box>
   );
 };
 

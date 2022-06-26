@@ -13,7 +13,7 @@ const Login = () => {
 						sx={{
 							backgroundColor: "white",
 							border: " 6px solid #DDB892",
-							borderRadius: "5px",
+							borderRadius: "10px",
 							textAlign: "center",
                             margin :"110px",
                             padding : "20px 80px 40px",

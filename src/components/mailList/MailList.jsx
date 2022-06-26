@@ -1,5 +1,5 @@
 import "./mailList.css";
-import { Stack, Button, TextField } from "@mui/material";
+import { Stack, Button } from "@mui/material";
 
 const MailList = () => {
 	return (
@@ -9,7 +9,7 @@ const MailList = () => {
 			sx={{
 				background: "#B08968",
 				width: "100%",
-				margin: "50px 0",
+				margin: "50px 0 0",
 				padding: "50px 0",
 				color: "white",
 			}}

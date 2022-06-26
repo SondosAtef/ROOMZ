@@ -3,6 +3,7 @@ import "./list.css";
 import { Container, Box, Stack, Typography , Button} from "@mui/material";
 
 import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 import SearchItem from "../../components/searchItem/SearchItem";
 import {useState} from "react"
 import {useLocation} from "react-router-dom"
@@ -93,6 +94,7 @@ const List = () => {
 					</Box>
 				</Stack>
 			</Container>
+      <Footer />
 		</Box>
 	);
 };
