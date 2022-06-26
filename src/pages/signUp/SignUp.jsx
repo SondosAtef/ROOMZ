@@ -2,13 +2,13 @@ import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 
 import { TextField, Box, Stack, Typography , Button } from "@mui/material";
-const Login = () => {
+const SignUp = () => {
 	return (
 		<div>
 			<Navbar />
 			<Box sx={{ backgroundColor: "#EDE0D4" }}>
 				<Stack direction="row" justifyContent="center" alignItems="center">
-				<Stack
+					<Stack
                     spacing={3}
 						sx={{
 							backgroundColor: "white",
@@ -21,23 +21,33 @@ const Login = () => {
 						}}
 					>
 						<Typography color="#785740" variant="h4" mt={3}>
-                            Welcome back!
+                            Welcome!
 						</Typography>
 
 						<TextField
 							id="outlined-basic"
-							label="User Name"
+							label="Email"
+							variant="outlined"
+						/>
+						<TextField
+							id="outlined-basic"
+							label="First Name"
 							variant="outlined"
 							
 						/>
-                        <br/>
+						<TextField
+							id="outlined-basic"
+							label="Last Name"
+							variant="outlined"
+						/>
 						<TextField
 							id="outlined-basic"
 							label="Password"
 							variant="outlined"
+							sx={{marginBottom : "20px"}}
 						/>
-                        <Button variant="contained" sx={{background:"#9c6644", width : "100%" , color:"#ede0d4" , "&:hover":{backgroundColor :"#7f5539"}  }}> 
-                            Login
+                        <Button variant="contained" sx={{background:"#9c6644", width : "100%" , color:"#ede0d4" , "&:hover":{backgroundColor :"#7f5539"}   }}> 
+                        Register
                         </Button>
 					</Stack>
 				</Stack>
@@ -47,4 +57,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default SignUp;

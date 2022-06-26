@@ -17,7 +17,7 @@ const Navbar = () => {
 				<Box>
 				<Stack direction="row" spacing={2} >
                 <Button variant="contained" sx={{background:"#9c6644" , color:"#ede0d4", "&:hover":{backgroundColor :"#7f5539"} }}>
-					<Link to="/" >Register</Link>
+					<Link to="/signUp" >Register</Link>
 					</Button>
 				<Button variant="contained" sx={{background:"#9c6644" , color:"#ede0d4" , "&:hover":{backgroundColor :"#7f5539"}  }}> 
 					<Link to="/login" >Login </Link>
